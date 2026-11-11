@@ -1,0 +1,43 @@
+# ── Materiale di lavoro NON oscurato: non deve mai finire nel repository ──
+work/
+raw/
+private/
+raw_findings*.json
+redactions*.json
+*.local.json
+# output intermedi degli script (cache estratta, immagini, OCR, pagine analizzate)
+index.json
+sel.json
+ocr.json
+page*.json
+ricerca-*.json
+# copie di cache o profili del browser
+Cache_Data/
+chrome-ricerca/
+*.har
+
+# ── Segreti ──
+.env
+.env.*
+*.pem
+*.key
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ── Node ──
+node_modules/
+npm-debug.log*
+
+# ── Sistema ed editor ──
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~

@@ -1,0 +1,4 @@
+Pillow
+rapidocr-onnxruntime   # porta con sé OpenCV e NumPy, usati anche per la passata CLAHE
+brotli                 # facoltativo: senza, usare scripts/unbr.js
+zstandard              # facoltativo
