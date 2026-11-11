@@ -130,7 +130,9 @@ I have not independently verified these claims and I report them as such. But th
 
 ### And Grok Bot?
 
-The 9 November browsing session was done with Grok Bot, and it held: it browsed without executing anything I had not asked for. It has to be said, though, that the analysis found no instruction for AI in those pages. The 24 cases came later, from the targeted searches. It is a good sign, not a demonstration.
+The 9 November browsing session was done with Grok Bot, and it held: it browsed without executing anything I had not asked for. During the session it also flagged and blocked one suspicious case. I did not record which one, and that is a limitation: the analysis run afterwards on the same pages found no attack, only the sentence quoted in the university report mentioned in phase 1. It is plausible that this was the one, but I cannot say so with certainty.
+
+The 24 cases came later, from the targeted searches, and Grok Bot never had those texts in front of it. One blocked case is a good sign, not a demonstration.
 
 The question I care about most stays open: faced with one of those five profiles, how many agents would end up writing the recipe? It takes very little to put together an assistant that browses and writes email. If it also follows the instructions it happens to come across, a sentence found in a profile can end up deciding what it writes to a client, to an internship supervisor or to a citizen.
 
@@ -202,7 +204,7 @@ The `work/` folder is excluded from the repository (`.gitignore`): it holds unre
 - The classification is manual.
 - **24 cases are not 24 distinct attacks.** Six records report the flan meme and may trace back to the same original case; one is a template with no payload (LI-009); one is a sentence to be said aloud in an interview (LI-002); one has only partially captured text (LI-008). They are flagged in the `notes` field.
 - The "zeros" of the first two phases hold for the tools used at the time: no shadow DOM or iframes, hiding checked only in user-content areas, OCR without passes dedicated to near-white tones.
-- No agent was tested against the 24 texts. Grok Bot did the initial browsing without executing anything it was not asked to, but those pages held no such instructions. That these injections work elsewhere is reported by two posts, not verified.
+- No agent was tested against the 24 texts. Grok Bot did the initial browsing without executing anything it was not asked to and blocked one suspicious case, which was not recorded and cannot be traced with certainty to any text. That these injections work elsewhere is reported by two posts, not verified.
 
 ## The dataset
 

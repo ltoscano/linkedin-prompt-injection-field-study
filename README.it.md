@@ -130,7 +130,9 @@ Non ho verificato in modo indipendente queste affermazioni e le riporto come tal
 
 ### E Grok Bot?
 
-Il giro del 9 novembre l'ho fatto con Grok Bot, e ha retto: ha navigato senza eseguire nulla che non gli avessi chiesto io. Va detto però che in quelle pagine l'analisi non ha trovato nessuna istruzione per le AI. I 24 casi sono arrivati dopo, dalle ricerche mirate. È un buon segno, non una dimostrazione.
+Il giro del 9 novembre l'ho fatto con Grok Bot, e ha retto: ha navigato senza eseguire nulla che non gli avessi chiesto io. Durante il giro ha anche segnalato e bloccato un caso sospetto. Non ho registrato quale fosse, ed è un limite: l'analisi fatta dopo sulle stesse pagine non ha trovato attacchi, solo la frase citata nel report universitario di cui parlo nella fase 1. È plausibile che fosse quella, ma non posso dirlo con certezza.
+
+I 24 casi sono arrivati dopo, dalle ricerche mirate, e Grok Bot quei testi non li ha mai avuti davanti. Un caso bloccato è un buon segno, non una dimostrazione.
 
 Resta aperta la domanda che mi interessa di più: quanti agenti, davanti a uno di quei cinque profili, finirebbero per scrivere la ricetta? Per mettere in piedi un assistente che naviga e scrive email può bastare molto poco. Se segue anche le istruzioni che incontra per caso, una frase trovata in un profilo può finire per decidere cosa scrive a un cliente, al responsabile di un tirocinio o a un cittadino.
 
@@ -202,7 +204,7 @@ La cartella `work/` è esclusa dal repository (`.gitignore`): contiene testo non
 - La classificazione è manuale.
 - **24 casi non sono 24 attacchi distinti.** Sei record riportano il meme del flan e possono risalire allo stesso caso originale; uno è un template senza payload (LI-009); uno è una frase da dire a voce in un colloquio (LI-002); uno ha il testo catturato solo in parte (LI-008). Sono segnalati nel campo `notes`.
 - Gli "zero" delle prime due fasi valgono per gli strumenti usati allora: niente shadow DOM né iframe, occultamento controllato solo nelle aree di contenuto utente, OCR senza passate dedicate ai toni quasi bianchi.
-- Nessun agente è stato messo alla prova contro i 24 testi. Grok Bot ha fatto il giro iniziale senza eseguire nulla di non richiesto, ma in quelle pagine di istruzioni non ce n'erano. Che altrove queste injection funzionino è riportato da due post, non verificato.
+- Nessun agente è stato messo alla prova contro i 24 testi. Grok Bot ha fatto il giro iniziale senza eseguire nulla di non richiesto e ha bloccato un caso sospetto, che però non è stato registrato e non si può ricondurre con certezza a nessun testo. Che altrove queste injection funzionino è riportato da due post, non verificato.
 
 ## Il dataset
 
