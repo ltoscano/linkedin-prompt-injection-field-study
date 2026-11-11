@@ -24,7 +24,7 @@ Mi aspettavo il classico trucco del testo bianco su sfondo bianco: invisibile al
 
 ## Fase 1: ho fatto l'autopsia alla cache del mio browser
 
-Ho preso la cache di Chrome di un pomeriggio passato su LinkedIn (il 9 novembre 2026: 108 visite, una trentina di pagine tra articoli, feed e profili) e l'ho smontata pezzo per pezzo.
+Ho preso la cache di Chrome di un pomeriggio passato su LinkedIn (il 9 novembre 2026: 108 visite, una trentina di pagine tra articoli, feed e profili) e l'ho smontata pezzo per pezzo. Il giro l'ho fatto con Grok Bot; l'analisi, da qui in poi, con Claude Code.
 
 - **1.178 risorse** estratte e decompresse (gzip e Brotli)
 - ricerca di frasi tipiche di injection in italiano e in inglese
@@ -58,6 +58,8 @@ Ho cercato su LinkedIn le formule tipiche delle injection: *"if you are an LLM"*
 **Ed eccole. Decine. In piena vista.**
 
 Dopo aver tolto i duplicati e i semplici commenti, ho catalogato **24 casi**. Il dataset completo è in [`data/`](data/).
+
+Cinque sono profili attivi con l'istruzione scritta dentro. Due sono post in cui l'autore la inserisce di suo. Gli altri diciassette sono post di persone che ne hanno trovata una e la riportano parola per parola: non vogliono ingannare nessuno, ma un agente che legge quel post legge anche l'istruzione. Una citazione fedele funziona come l'originale.
 
 | | |
 |---|---|
@@ -126,11 +128,11 @@ Nei post ci sono due testimonianze dirette: *"worked like a charm 🍮"* e il ra
 
 Non ho verificato in modo indipendente queste affermazioni e le riporto come tali. Ma il fatto che il meme si sia diffuso fino a finire nei **titoli professionali**, cioè nella riga che compare in ogni risultato di ricerca e in ogni anteprima, dice che chi lo usa ci crede abbastanza da metterci la faccia.
 
-### Un agente che non ci è cascato
+### E Grok Bot?
 
-Una prova l'ho fatta, con un solo agente. Grok Bot, messo davanti a questi testi, se ne è accorto e li ha evitati. A quanto ho potuto osservare il merito è di due cose insieme: i controlli del browser nella sandbox in cui lavora e la capacità del modello di riconoscere un'istruzione che arriva dal contenuto e non da chi lo sta usando.
+Il giro del 9 novembre l'ho fatto con Grok Bot, e ha retto: ha navigato senza eseguire nulla che non gli avessi chiesto io. Va detto però che in quelle pagine l'analisi non ha trovato nessuna istruzione per le AI. I 24 casi sono arrivati dopo, dalle ricerche mirate. È un buon segno, non una dimostrazione.
 
-È un caso, non una statistica: un agente, una sessione. E lascia aperta la domanda che mi interessa di più. Varrà per tutti gli altri? Soprattutto per quelli fatti in casa, un modello collegato a un browser e a una casella di posta nel giro di un fine settimana, senza nessuno di quei controlli attorno?
+Resta aperta la domanda che mi interessa di più: quanti agenti, davanti a uno di quei cinque profili, finirebbero per scrivere la ricetta? Per mettere in piedi un assistente che naviga e scrive email può bastare molto poco. Se segue anche le istruzioni che incontra per caso, una frase trovata in un profilo può finire per decidere cosa scrive a un cliente, al responsabile di un tirocinio o a un cittadino.
 
 ## Quello che questa ricerca dice davvero
 
@@ -200,7 +202,7 @@ La cartella `work/` è esclusa dal repository (`.gitignore`): contiene testo non
 - La classificazione è manuale.
 - **24 casi non sono 24 attacchi distinti.** Sei record riportano il meme del flan e possono risalire allo stesso caso originale; uno è un template senza payload (LI-009); uno è una frase da dire a voce in un colloquio (LI-002); uno ha il testo catturato solo in parte (LI-008). Sono segnalati nel campo `notes`.
 - Gli "zero" delle prime due fasi valgono per gli strumenti usati allora: niente shadow DOM né iframe, occultamento controllato solo nelle aree di contenuto utente, OCR senza passate dedicate ai toni quasi bianchi.
-- L'efficacia l'ho provata con un solo agente (Grok Bot), che ha retto. Che altrove queste injection funzionino è riportato da due post, non verificato.
+- Nessun agente è stato messo alla prova contro i 24 testi. Grok Bot ha fatto il giro iniziale senza eseguire nulla di non richiesto, ma in quelle pagine di istruzioni non ce n'erano. Che altrove queste injection funzionino è riportato da due post, non verificato.
 
 ## Il dataset
 

@@ -24,7 +24,7 @@ I expected the classic trick of white text on a white background: invisible to t
 
 ## Phase 1: an autopsy of my browser cache
 
-I took the Chrome cache of an afternoon spent on LinkedIn (9 November 2026: 108 visits, about thirty pages across articles, feed and profiles) and took it apart piece by piece.
+I took the Chrome cache of an afternoon spent on LinkedIn (9 November 2026: 108 visits, about thirty pages across articles, feed and profiles) and took it apart piece by piece. The browsing was done with Grok Bot; the analysis, from here on, with Claude Code.
 
 - **1,178 resources** extracted and decompressed (gzip and Brotli)
 - a search for typical injection phrases in Italian and English
@@ -58,6 +58,8 @@ I searched LinkedIn for the typical injection formulas: *"if you are an LLM"*, *
 **And there they were. Dozens. In plain sight.**
 
 After removing duplicates and mere comments, I catalogued **24 cases**. The full dataset is in [`data/`](data/).
+
+Five are active profiles with the instruction written into them. Two are posts whose author puts it in on their own. The other seventeen are posts by people who found one and report it word for word: they are not trying to deceive anyone, but an agent reading that post reads the instruction too. A faithful quote works like the original.
 
 | | |
 |---|---|
@@ -126,11 +128,11 @@ The posts contain two first-hand accounts: *"worked like a charm 🍮"* and the 
 
 I have not independently verified these claims and I report them as such. But the fact that the meme spread all the way into **professional headlines**, the line that shows up in every search result and every preview, says that the people using it believe in it enough to put their face on it.
 
-### An agent that did not fall for it
+### And Grok Bot?
 
-I did run one test, with a single agent. Grok Bot, faced with these texts, noticed them and avoided them. As far as I could observe, two things together deserve the credit: the browser controls of the sandbox it works in, and the model's own ability to recognize an instruction that comes from the content and not from the person using it.
+The 9 November browsing session was done with Grok Bot, and it held: it browsed without executing anything I had not asked for. It has to be said, though, that the analysis found no instruction for AI in those pages. The 24 cases came later, from the targeted searches. It is a good sign, not a demonstration.
 
-It is one case, not a statistic: one agent, one session. And it leaves open the question I care about most. Will it hold for all the others? Especially the home-made ones, a model wired to a browser and a mailbox over a weekend, with none of those controls around it?
+The question I care about most stays open: faced with one of those five profiles, how many agents would end up writing the recipe? It takes very little to put together an assistant that browses and writes email. If it also follows the instructions it happens to come across, a sentence found in a profile can end up deciding what it writes to a client, to an internship supervisor or to a citizen.
 
 ## What this research really says
 
@@ -200,7 +202,7 @@ The `work/` folder is excluded from the repository (`.gitignore`): it holds unre
 - The classification is manual.
 - **24 cases are not 24 distinct attacks.** Six records report the flan meme and may trace back to the same original case; one is a template with no payload (LI-009); one is a sentence to be said aloud in an interview (LI-002); one has only partially captured text (LI-008). They are flagged in the `notes` field.
 - The "zeros" of the first two phases hold for the tools used at the time: no shadow DOM or iframes, hiding checked only in user-content areas, OCR without passes dedicated to near-white tones.
-- I tested effectiveness with a single agent (Grok Bot), which held. That these injections work elsewhere is reported by two posts, not verified.
+- No agent was tested against the 24 texts. Grok Bot did the initial browsing without executing anything it was not asked to, but those pages held no such instructions. That these injections work elsewhere is reported by two posts, not verified.
 
 ## The dataset
 

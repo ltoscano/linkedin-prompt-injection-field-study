@@ -25,7 +25,8 @@ Revisione fatta dopo la raccolta dei dati (9 e 10 novembre 2026). I numeri del R
 - Le descrizioni delle fasi 1 e 2 ora corrispondono a ciò che gli script originali facevano davvero.
 - Aggiunte le istruzioni per riprodurre.
 - Il README principale è in inglese; l'originale italiano è in `README.it.md`. "Canarino" è diventato "canary", il termine tecnico.
-- Nuovo titolo, e un paragrafo sulla prova fatta con Grok Bot, con il limite corrispondente aggiornato.
+- Nuovo titolo. Chiarito il ruolo degli strumenti: navigazione con Grok Bot, analisi con Claude Code. Grok Bot ha fatto il giro senza eseguire nulla di non richiesto, ma in quelle pagine non c'erano istruzioni: nessun agente è stato provato contro i 24 testi.
+- Spiegata la composizione dei 24 casi (5 profili, 2 post dell'autore, 17 citazioni) e perché una citazione fedele resta un rischio.
 
 ### Script
 
